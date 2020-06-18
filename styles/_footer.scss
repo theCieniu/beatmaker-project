@@ -1,0 +1,17 @@
+footer {
+  width: 100%;
+  @include flex(row, space-between, center);
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  font-size: calc(1rem + 0.5vw);
+  min-height: 5vh;
+  margin-top: auto;
+  background-color: $dark;
+  color: $white;
+  ul {
+    @include flex(row, center, center);
+  }
+  i {
+    margin: 0 1rem;
+  }
+}
