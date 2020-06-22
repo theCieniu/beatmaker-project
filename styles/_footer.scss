@@ -1,7 +1,6 @@
 footer {
   width: 100%;
   @include flex(row, space-between, center);
-  flex-wrap: wrap;
   padding: 1rem 2rem;
   font-size: calc(1rem + 0.5vw);
   min-height: 5vh;
@@ -10,6 +9,7 @@ footer {
   color: $white;
   ul {
     @include flex(row, center, center);
+    list-style: none;
   }
   i {
     margin: 0 1rem;

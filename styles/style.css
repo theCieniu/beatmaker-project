@@ -15,32 +15,79 @@ html {
 
 body {
   width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
-  color: #111;
+  color: #220423;
   font-size: calc(1.5rem + 0.5vw);
+  background: black url("/../img/beatmaker-bg.JPG") no-repeat center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-beetween;
+      -ms-flex-pack: space-beetween;
+          justify-content: space-beetween;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-main {
-  min-height: 85vh;
+button {
+  background-color: #220423;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  font-size: calc(1.5rem + 0.5vw);
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-ul {
-  list-style: none;
+button:hover {
+  background: -webkit-gradient(linear, left top, right bottom, from(#83bfb9), color-stop(#fdf794), to(#e59ec8));
+  background: linear-gradient(to right bottom, #83bfb9, #fdf794, #e59ec8);
+  color: #220423;
+}
+
+button .mute {
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+select {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  font-size: calc(1.5rem + 0.5vw);
+  border: solid 2px black;
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 a,
 a:visited {
   color: #fff;
   text-decoration: none;
-  -webkit-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 a:hover,
 a:focus,
 a:link:active,
 a:visited:active {
-  color: #111;
+  color: #9bdbd5;
 }
 
 /*======= TYPOGRAPHY ===========*/
@@ -66,10 +113,54 @@ h5 {
 }
 
 /*================================*/
-nav {
-  min-height: 10vh;
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: white;
+  margin: 20vh auto;
+  width: 90%;
+  max-width: 1400px;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+main i,
+main svg {
+  pointer-events: none;
+}
+
+.sequencer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
-  padding: 0 5vw;
+}
+
+.controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,15 +176,58 @@ nav {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #111;
-  color: #fff;
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5 1 20rem;
+          flex: 1.5 1 20rem;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 2rem;
 }
 
-nav h1 {
-  margin: 1rem 2rem 1rem 0;
+.controls h1,
+.controls button,
+.controls select {
+  margin: 2rem;
 }
 
-nav ul {
+.kick-track select:hover {
+  border: solid 2px #28a297;
+}
+
+.snare-track select:hover {
+  border: solid 2px #ffe600;
+}
+
+.hihat-track select:hover {
+  border: solid 2px #b21773;
+}
+
+.track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 20rem;
+          flex: 2 1 20rem;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.pads {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,49 +240,46 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 3rem;
 }
 
-nav ul li {
-  margin: 1rem 0 1rem 3em;
+.pad {
+  width: calc(2rem + 2.5vw);
+  height: calc(2rem + 2.5vw);
+  margin: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-#burger {
-  display: none;
+.kick-pad {
+  background-color: #9bdbd5;
 }
 
-/*======= NAVIGATION BURGER ===========
-#burger {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
+.kick-pad:hover, .kick-pad:active {
+  background-color: #28a297;
 }
 
-.burger {
-  padding: 0.15rem 1.6rem;
-  margin: 0.6rem 0;
-  background-color: &dark;
-  display: block;
-  transition: all 0.5s ease;
+.snare-pad {
+  background-color: #f3f0bc;
 }
 
-.b1 {
-  transform: rotateZ(45deg) translateY(420%);
+.snare-pad:hover, .snare-pad:active {
+  background-color: #ffe600;
 }
 
-.b2 {
-  opacity: 0;
+.hihat-pad {
+  background-color: #e59ec8;
 }
 
-.b3 {
-  transform: rotateZ(-45deg) translateY(-420%);
+.hihat-pad:hover, .hihat-pad:active {
+  background-color: #b21773;
 }
 
-.mobile-menu {
-  display: block;
-}
-*/
 footer {
   width: 100%;
   display: -webkit-box;
@@ -170,7 +301,7 @@ footer {
   font-size: calc(1rem + 0.5vw);
   min-height: 5vh;
   margin-top: auto;
-  background-color: #111;
+  background-color: #220423;
   color: #fff;
 }
 
@@ -188,6 +319,9 @@ footer ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
 }
 
 footer i {

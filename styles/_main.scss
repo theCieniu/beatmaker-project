@@ -1,0 +1,86 @@
+main {
+  @include flex(column, center, center);
+  background-color: white;
+  margin: 20vh auto;
+  width: 90%;
+  max-width: 1400px;
+  padding: 2rem;
+  border-radius: 2rem;
+  i,
+  svg {
+    pointer-events: none;
+  }
+}
+
+.sequencer {
+  @include flex(column, space-around, center);
+  width: 100%;
+}
+
+.controls {
+  @include flex(row, space-between, center);
+  flex: 1.5 1 20rem;
+  flex-wrap: nowrap;
+  margin: 2rem;
+  h1,
+  button,
+  select {
+    margin: 2rem;
+  }
+}
+
+.kick-track select:hover {
+  border: solid 2px $color1;
+}
+
+.snare-track select:hover {
+  border: solid 2px $color2;
+}
+
+.hihat-track select:hover {
+  border: solid 2px $color3;
+}
+
+.track {
+  @include flex(row, space-between, space-between);
+  align-self: center;
+  flex: 2 1 20rem;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.pads {
+  @include flex(row, space-around, center);
+  flex-wrap: nowrap;
+  margin: 3rem;
+}
+
+.pad {
+  width: calc(2rem + 2.5vw);
+  height: calc(2rem + 2.5vw);
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kick-pad {
+  background-color: $color1a;
+  &:hover,
+  &:active {
+    background-color: $color1;
+  }
+}
+.snare-pad {
+  background-color: $color2a;
+  &:hover,
+  &:active {
+    background-color: $color2;
+  }
+}
+.hihat-pad {
+  background-color: $color3a;
+  &:hover,
+  &:active {
+    background-color: $color3;
+  }
+}

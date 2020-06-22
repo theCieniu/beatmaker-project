@@ -9,6 +9,10 @@
       integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
+      rel="stylesheet"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes"
@@ -29,7 +33,7 @@
   <body>
     <main>
       <div class="sequencer">
-        <div class="kick-track">
+        <div class="kick-track track">
           <div class="controls">
             <h1>Kick</h1>
             <button class="mute kick-volume" data-track="0">
@@ -41,7 +45,7 @@
               <option value="./sounds/kick-newwave.wav">New Wave Kick</option>
             </select>
           </div>
-          <div class="kick">
+          <div class="kick pads">
             <div class="pad kick-pad b1"></div>
             <div class="pad kick-pad b2"></div>
             <div class="pad kick-pad b3"></div>
@@ -53,9 +57,9 @@
           </div>
         </div>
 
-        <div class="snare-track">
+        <div class="snare-track track">
           <div class="controls">
-            <h1>Kick</h1>
+            <h1>Snare</h1>
             <button class="mute snare-volume" data-track="0">
               <i class="fas fa-volume-mute"></i>
             </button>
@@ -67,7 +71,7 @@
               <option value="./sounds/snare-modular.wav">Modular Snare</option>
             </select>
           </div>
-          <div class="snare">
+          <div class="snare pads">
             <div class="pad snare-pad b1"></div>
             <div class="pad snare-pad b2"></div>
             <div class="pad snare-pad b3"></div>
@@ -79,9 +83,9 @@
           </div>
         </div>
 
-        <div class="hihat-track">
+        <div class="hihat-track track">
           <div class="controls">
-            <h1>Kick</h1>
+            <h1>Hihat</h1>
             <button class="mute hihat-volume" data-track="0">
               <i class="fas fa-volume-mute"></i>
             </button>
@@ -93,7 +97,7 @@
               <option value="./sounds/hihat-digital.wav">Digital Hihat</option>
             </select>
           </div>
-          <div class="hihat">
+          <div class="hihat pads">
             <div class="pad hihat-pad b1"></div>
             <div class="pad hihat-pad b2"></div>
             <div class="pad hihat-pad b3"></div>
