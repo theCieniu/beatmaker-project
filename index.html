@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Front-end project</title>
+    <title>Beatmaker</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -13,55 +13,104 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes"
     />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="icon" href="favicon.ico" type="image/ico" />
     <meta name="author" content="Paulina Weiher" />
     <meta
       name="keywords"
-      content="paulina weiher front-end web developer project portfolio"
+      content="paulina weiher javascript project beatmaker app"
     />
     <meta
       name="description"
-      content="Front-end project with html, css and javascript for web developer portfolio by Paulina Weiher"
+      content="JavaScript project Beatmaker for web developer portfolio by Paulina Weiher"
     />
-    <!-- line below is commented, because it's not needed for github pages
-  <meta name="robots" content="index,follow"> -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" href="favicon.ico" type="image/ico" />
   </head>
 
   <body>
-    <header>
-      <nav>
-        <h1>Hello World</h1>
-
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-
-        <div id="burger">
-          <span id="b1" class="burger"></span>
-          <span id="b2" class="burger"></span>
-          <span id="b3" class="burger"></span>
-        </div>
-      </nav>
-    </header>
-
     <main>
-      <section class="hero">
-        <h2>Hello World</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          optio excepturi autem repudiandae?
-        </p>
-        <button type="submit">Join us!</button>
-      </section>
+      <div class="sequencer">
+        <div class="kick-track">
+          <div class="controls">
+            <h1>Kick</h1>
+            <button class="mute kick-volume" data-track="0">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+            <select name="kick-select" id="kick-select">
+              <option value="./sounds/kick-classic.wav">Classic Kick</option>
+              <option value="./sounds/kick-heavy.wav">Heavy Kick</option>
+              <option value="./sounds/kick-newwave.wav">New Wave Kick</option>
+            </select>
+          </div>
+          <div class="kick">
+            <div class="pad kick-pad b1"></div>
+            <div class="pad kick-pad b2"></div>
+            <div class="pad kick-pad b3"></div>
+            <div class="pad kick-pad b4"></div>
+            <div class="pad kick-pad b5"></div>
+            <div class="pad kick-pad b6"></div>
+            <div class="pad kick-pad b7"></div>
+            <div class="pad kick-pad b8"></div>
+          </div>
+        </div>
+
+        <div class="snare-track">
+          <div class="controls">
+            <h1>Kick</h1>
+            <button class="mute snare-volume" data-track="0">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+            <select name="snare-select" id="snare-select">
+              <option value="./sounds/snare-acoustic01.wav"
+                >Acoustic Snare</option
+              >
+              <option value="./sounds/snare-smasher.wav">Smasher Snare</option>
+              <option value="./sounds/snare-modular.wav">Modular Snare</option>
+            </select>
+          </div>
+          <div class="snare">
+            <div class="pad snare-pad b1"></div>
+            <div class="pad snare-pad b2"></div>
+            <div class="pad snare-pad b3"></div>
+            <div class="pad snare-pad b4"></div>
+            <div class="pad snare-pad b5"></div>
+            <div class="pad snare-pad b6"></div>
+            <div class="pad snare-pad b7"></div>
+            <div class="pad snare-pad b8"></div>
+          </div>
+        </div>
+
+        <div class="hihat-track">
+          <div class="controls">
+            <h1>Kick</h1>
+            <button class="mute hihat-volume" data-track="0">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+            <select name="hihat-select" id="hihat-select">
+              <option value="./sounds/hihat-acoustic01.wav"
+                >Acoustic Hihat</option
+              >
+              <option value="./sounds/hihat-ring.wav">Ring Hihat</option>
+              <option value="./sounds/hihat-digital.wav">Digital Hihat</option>
+            </select>
+          </div>
+          <div class="hihat">
+            <div class="pad hihat-pad b1"></div>
+            <div class="pad hihat-pad b2"></div>
+            <div class="pad hihat-pad b3"></div>
+            <div class="pad hihat-pad b4"></div>
+            <div class="pad hihat-pad b5"></div>
+            <div class="pad hihat-pad b6"></div>
+            <div class="pad hihat-pad b7"></div>
+            <div class="pad hihat-pad b8"></div>
+          </div>
+        </div>
+      </div>
+      <button class="play">Play</button>
     </main>
 
     <footer>
       <p>
-        <a href="https://github.com/theCieniu/hello-world"
+        <a href="https://github.com/theCieniu/beatmaker-project"
           ><i class="fas fa-code"></i>this site's code</a
         >
       </p>
@@ -105,6 +154,9 @@
       </p>
     </footer>
 
-    <script src="script.js"></script>
+    <audio src="./sounds/kick-classic.wav" class="kick-sound"></audio>
+    <audio src="./sounds/snare-acoustic01.wav" class="snare-sound"></audio>
+    <audio src="./sounds/hihat-acoustic01.wav" class="hihat-sound"></audio>
+    <script src="app.js"></script>
   </body>
 </html>
