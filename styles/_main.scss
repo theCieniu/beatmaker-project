@@ -1,10 +1,10 @@
 main {
   @include flex(column, center, center);
   background-color: white;
-  margin: 20vh auto;
+  margin: 10vw auto;
   width: 90%;
   max-width: 1400px;
-  padding: 2rem;
+  padding: 4rem 2rem;
   border-radius: 2rem;
   i,
   svg {
@@ -17,15 +17,22 @@ main {
   width: 100%;
 }
 
+.track {
+  @include flex(row, space-between, space-between);
+  align-self: center;
+  width: 100%;
+  margin: 2rem auto;
+  flex-wrap: nowrap;
+}
+
 .controls {
   @include flex(row, space-between, center);
-  flex: 1.5 1 20rem;
+  flex: 1 1 15rem;
   flex-wrap: nowrap;
-  margin: 2rem;
   h1,
   button,
   select {
-    margin: 2rem;
+    margin: 0.5rem 1vw;
   }
 }
 
@@ -41,24 +48,17 @@ main {
   border: solid 2px $color3;
 }
 
-.track {
-  @include flex(row, space-between, space-between);
-  align-self: center;
-  flex: 2 1 20rem;
-  margin: 2rem auto;
-  width: 100%;
-}
-
 .pads {
   @include flex(row, space-around, center);
   flex-wrap: nowrap;
-  margin: 3rem;
+  margin: 0.5rem 1vw;
+  flex: 1 1 15rem;
 }
 
 .pad {
-  width: calc(2rem + 2.5vw);
-  height: calc(2rem + 2.5vw);
-  margin: 0.5rem;
+  width: calc(1rem + 4vw);
+  height: calc(1rem + 4vw);
+  margin: 0.2vw;
   cursor: pointer;
   transition: all 0.2s ease;
 }

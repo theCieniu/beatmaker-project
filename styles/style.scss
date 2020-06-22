@@ -38,7 +38,7 @@ body {
   overflow-x: hidden;
   color: $dark;
   font-size: calc(1.5rem + 0.5vw);
-  background: black url("/../img/beatmaker-bg.JPG") no-repeat center;
+  background: black url("/../img/beatmaker-bg.jpg") no-repeat center;
   background-size: cover;
   @include flex(row, space-beetween, center);
   font-family: "Nunito Sans", sans-serif;
@@ -48,9 +48,8 @@ button {
   background-color: $dark;
   border: none;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.5em 1em;
   border-radius: 2rem;
-  margin: 1rem auto;
   font-size: calc(1.5rem + 0.5vw);
   cursor: pointer;
   transition: all 0.5s ease;
@@ -60,16 +59,20 @@ button {
   }
   .mute {
     border-radius: 50%;
-    padding: 0.5rem;
+    font-size: calc(0.5rem + 0.5vw);
+    padding: 0.1em;
+    i {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 
 select {
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 0.5em 1em;
   border-radius: 2rem;
-  margin: 1rem auto;
-  font-size: calc(1.5rem + 0.5vw);
+  font-size: calc(1.2rem + 0.5vw);
   border: solid 2px black;
   font-family: "Nunito Sans", sans-serif;
   transition: all 0.5s ease;
