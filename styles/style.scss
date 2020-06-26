@@ -38,7 +38,7 @@ body {
   overflow-x: hidden;
   color: $dark;
   font-size: calc(1.5rem + 0.5vw);
-  background: black url("/../img/beatmaker-bg.jpg") no-repeat center;
+  background: black url("../img/beatmaker-bg.jpg") no-repeat center;
   background-size: cover;
   @include flex(row, space-beetween, center);
   font-family: "Nunito Sans", sans-serif;
@@ -69,6 +69,7 @@ button {
 }
 
 select {
+  background-color: white;
   cursor: pointer;
   padding: 0.5em 1em;
   border-radius: 2rem;
@@ -94,23 +95,8 @@ a:visited:active {
 
 /*======= TYPOGRAPHY ===========*/
 h1 {
-  font-size: calc(2rem + 1vw);
-}
-
-h2 {
-  font-size: calc(3rem + 3vw);
-  line-height: 1.2em;
-}
-
-h3 {
-  font-size: calc(3rem + 1vw);
-}
-
-h4 {
-  font-size: calc(2.4rem + 1vw);
-}
-h5 {
-  font-size: calc(2rem + 1vw);
+  font-size: calc(1.5rem + 1.5vw);
+  text-transform: uppercase;
 }
 
 /*================================*/
@@ -118,3 +104,4 @@ h5 {
 @import "main";
 @import "footer";
 @import "responsive";
+@import "animations";

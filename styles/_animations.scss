@@ -1,0 +1,24 @@
+.animated-pad {
+  animation: animated-pad 0.2s ease alternate 2;
+  transform-origin: center;
+}
+
+@keyframes animated-pad {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.active-pad {
+  border: solid 2px black;
+}
+
+.kick .active-pad {
+  background-color: $color1;
+}
+.snare .active-pad {
+  background-color: $color2;
+}
+.hihat .active-pad {
+  background-color: $color3;
+}

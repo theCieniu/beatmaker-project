@@ -19,7 +19,7 @@ body {
   overflow-x: hidden;
   color: #220423;
   font-size: calc(1.5rem + 0.5vw);
-  background: black url("/../img/beatmaker-bg.jpg") no-repeat center;
+  background: black url("../img/beatmaker-bg.jpg") no-repeat center;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,6 +69,7 @@ button .mute i {
 }
 
 select {
+  background-color: white;
   cursor: pointer;
   padding: 0.5em 1em;
   border-radius: 2rem;
@@ -96,24 +97,8 @@ a:visited:active {
 
 /*======= TYPOGRAPHY ===========*/
 h1 {
-  font-size: calc(2rem + 1vw);
-}
-
-h2 {
-  font-size: calc(3rem + 3vw);
-  line-height: 1.2em;
-}
-
-h3 {
-  font-size: calc(3rem + 1vw);
-}
-
-h4 {
-  font-size: calc(2.4rem + 1vw);
-}
-
-h5 {
-  font-size: calc(2rem + 1vw);
+  font-size: calc(1.5rem + 1.5vw);
+  text-transform: uppercase;
 }
 
 /*================================*/
@@ -133,7 +118,7 @@ main {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 10vw auto;
   width: 90%;
   max-width: 1400px;
@@ -360,5 +345,42 @@ footer i {
             justify-content: center;
   }
   /*======= ================== ===========*/
+}
+
+.animated-pad {
+  -webkit-animation: animated-pad 0.2s ease alternate 2;
+          animation: animated-pad 0.2s ease alternate 2;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+@-webkit-keyframes animated-pad {
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes animated-pad {
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+.active-pad {
+  border: solid 2px black;
+}
+
+.kick .active-pad {
+  background-color: #28a297;
+}
+
+.snare .active-pad {
+  background-color: #ffe600;
+}
+
+.hihat .active-pad {
+  background-color: #b21773;
 }
 /*# sourceMappingURL=style.css.map */
