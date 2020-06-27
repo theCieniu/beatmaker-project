@@ -9,9 +9,10 @@ class DrumKit {
     this.kickSound = document.querySelector(".kick-sound");
     this.snareSound = document.querySelector(".snare-sound");
     this.hihatSound = document.querySelector(".hihat-sound");
+    this.selectors = document.querySelectorAll("select");
     this.index = 0;
     this.bpm = 150;
-    this.isPlaying = null;
+    //this.isPlaying = null;
   }
 
   padActivation() {
@@ -47,22 +48,35 @@ class DrumKit {
 
   start() {
     const interval = (60 / this.bpm) * 1000;
+    this.index = 0;
     this.isPlaying = setInterval(() => {
       this.loop();
     }, interval);
+  }
+
+  selecting(event, kickS, snareS, hihatS) {
+    switch (event.target.name) {
+      case "kick-select":
+        kickS.setAttribute("src", event.target.value);
+        break;
+      case "snare-select":
+        snareS.setAttribute("src", event.target.value);
+        break;
+      case "hihat-select":
+        hihatS.setAttribute("src", event.target.value);
+        break;
+      default:
+        cl("other sound?");
+    }
   }
 }
 
 const drumKit = new DrumKit();
 
-// PLAY BUTTON FUNCTIONALITY
+// PLAY/STOP BUTTON FUNCTIONALITY
 drumKit.playBtn.addEventListener("click", () => {
   if (drumKit.playBtn.classList.contains("is-playing")) {
-    // to be continued - stop functionality
-    cl(drumKit.isPlaying);
     clearInterval(drumKit.isPlaying);
-    drumKit.isPlaying = null;
-    // ^ to be continued
     drumKit.playBtn.classList.remove("is-playing");
     drumKit.playBtn.textContent = "Play";
   } else {
@@ -75,4 +89,15 @@ drumKit.playBtn.addEventListener("click", () => {
 // SELECTING PADS
 drumKit.pads.forEach((pad) => {
   pad.addEventListener("click", drumKit.padActivation);
+});
+
+// PLAY/STOP BUTTON FUNCTIONALITY
+
+drumKit.selectors.forEach((selector) => {
+  selector.addEventListener("click", (event) => {
+    let kickS = drumKit.kickSound;
+    let snareS = drumKit.snareSound;
+    let hihatS = drumKit.hihatSound;
+    drumKit.selecting(event, kickS, snareS, hihatS);
+  });
 });
