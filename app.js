@@ -10,6 +10,7 @@ class DrumKit {
     this.snareSound = document.querySelector(".snare-sound");
     this.hihatSound = document.querySelector(".hihat-sound");
     this.selectors = document.querySelectorAll("select");
+    this.muteBtns = document.querySelectorAll(".mute");
     this.index = 0;
     this.bpm = 150;
     //this.isPlaying = null;
@@ -69,6 +70,10 @@ class DrumKit {
         cl("other sound?");
     }
   }
+
+  muting(event) {
+    cl(event.target);
+  }
 }
 
 const drumKit = new DrumKit();
@@ -91,13 +96,19 @@ drumKit.pads.forEach((pad) => {
   pad.addEventListener("click", drumKit.padActivation);
 });
 
-// PLAY/STOP BUTTON FUNCTIONALITY
-
+// SELECTOR CHANGING THE SOUNDS
 drumKit.selectors.forEach((selector) => {
   selector.addEventListener("click", (event) => {
     let kickS = drumKit.kickSound;
     let snareS = drumKit.snareSound;
     let hihatS = drumKit.hihatSound;
     drumKit.selecting(event, kickS, snareS, hihatS);
+  });
+});
+
+//MUTING SOUNDS
+drumKit.muteBtns.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    drumKit.muting(event);
   });
 });
